@@ -1,7 +1,6 @@
-module github.com/ica10888/client-go-helper
+module github.com/adofsauron/client-go-helper
 
 replace (
-	github.com/renstrom/dedent => github.com/lithammer/dedent v1.1.0
 	golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c => github.com/golang/crypto v0.0.0-20190325154230-a5d413f7728c
 	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421 => github.com/golang/oauth2 v0.0.0-20190226205417-e64efc72b421
 	golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2 => github.com/golang/text v0.3.1-0.20180807135948-17ff2d5776d2
@@ -46,7 +45,6 @@ require (
 	github.com/onsi/ginkgo v1.7.0 // indirect
 	github.com/onsi/gomega v1.4.3 // indirect
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
-	github.com/renstrom/dedent v1.1.0 // indirect
 	github.com/russross/blackfriday v1.5.2 // indirect
 	github.com/sirupsen/logrus v1.2.0 // indirect
 	github.com/spf13/cobra v0.0.3 // indirect
