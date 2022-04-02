@@ -2,7 +2,8 @@ package kubectl
 
 import (
 	"fmt"
-	"github.com/ica10888/client-go-helper/pkg/kubectl/client"
+
+	"github.com/adofsauron/client-go-helper/pkg/kubectl/client"
 	yaml2 "gopkg.in/yaml.v2"
 
 	admissionregistrationV1alpha1 "k8s.io/api/admissionregistration/v1alpha1"

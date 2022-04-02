@@ -1,9 +1,10 @@
 package test
 
 import (
-	"github.com/ica10888/client-go-helper/pkg/kubectl"
 	"log"
 	"testing"
+
+	"github.com/adofsauron/client-go-helper/pkg/kubectl"
 )
 
 var yaml = `

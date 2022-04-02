@@ -1,8 +1,8 @@
 package kubectl
 
 import (
-	"github.com/ica10888/client-go-helper/pkg/kubectl/client"
-	"k8s.io/apimachinery/pkg/apis/meta/v1"
+	"github.com/adofsauron/client-go-helper/pkg/kubectl/client"
+	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func (i *cronJob) Delete(opts *v1.DeleteOptions) error {

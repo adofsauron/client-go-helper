@@ -2,6 +2,7 @@ package kubectl
 
 import (
 	"fmt"
+
 	yaml2 "gopkg.in/yaml.v2"
 
 	admissionregistrationV1alpha1 "k8s.io/api/admissionregistration/v1alpha1"
@@ -37,7 +38,7 @@ import (
 	storageV1alpha1 "k8s.io/api/storage/v1alpha1"
 	storageV1beta1 "k8s.io/api/storage/v1beta1"
 
-	"github.com/ica10888/client-go-helper/pkg/kubectl/client"
+	"github.com/adofsauron/client-go-helper/pkg/kubectl/client"
 	"k8s.io/client-go/kubernetes/scheme"
 )
 

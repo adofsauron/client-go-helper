@@ -1,7 +1,7 @@
 package kubectl
 
 import (
-	"github.com/ica10888/client-go-helper/pkg/kubectl/client"
+	"github.com/adofsauron/client-go-helper/pkg/kubectl/client"
 	admissionregistrationV1alpha1 "k8s.io/api/admissionregistration/v1alpha1"
 	admissionregistrationV1beta1 "k8s.io/api/admissionregistration/v1beta1"
 	appsV1 "k8s.io/api/apps/v1"

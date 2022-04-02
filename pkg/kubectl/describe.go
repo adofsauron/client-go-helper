@@ -1,8 +1,8 @@
 package kubectl
 
 import (
+	"github.com/adofsauron/client-go-helper/pkg/kubectl/client"
 	"github.com/ghodss/yaml"
-	"github.com/ica10888/client-go-helper/pkg/kubectl/client"
 	coreV1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -10,22 +10,21 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-
-func (i *pod) Describe() (coreV1.Pod, coreV1.EventList , error)  {
+func (i *pod) Describe() (coreV1.Pod, coreV1.EventList, error) {
 	//Pod
 	getOpts := metav1.GetOptions{}
 	clientset, err := client.InitClient()
 	if err != nil {
-		return coreV1.Pod{} ,coreV1.EventList{}, err
+		return coreV1.Pod{}, coreV1.EventList{}, err
 	}
 
-	pod , err := clientset.
+	pod, err := clientset.
 		CoreV1().
 		Pods(i.Namespace).
 		Get(i.Name, getOpts)
 
 	if err != nil {
-		return  coreV1.Pod{} ,coreV1.EventList{}, err
+		return coreV1.Pod{}, coreV1.EventList{}, err
 	}
 
 	// Events
@@ -36,12 +35,12 @@ func (i *pod) Describe() (coreV1.Pod, coreV1.EventList , error)  {
 
 	restconfig, err := kubeconfig.ClientConfig()
 	if err != nil {
-		return  *pod ,coreV1.EventList{}, err
+		return *pod, coreV1.EventList{}, err
 	}
 
 	coreclient, err := corev1client.NewForConfig(restconfig)
 	if err != nil {
-		return *pod ,coreV1.EventList{}, err
+		return *pod, coreV1.EventList{}, err
 	}
 
 	req := coreclient.
@@ -56,29 +55,27 @@ func (i *pod) Describe() (coreV1.Pod, coreV1.EventList , error)  {
 	obj, _, err := scheme.Codecs.UniversalDeserializer().Decode([]byte(eventsYaml), nil, nil)
 	events := obj.(*coreV1.EventList)
 	if err != nil {
-		return *pod ,coreV1.EventList{}, err
+		return *pod, coreV1.EventList{}, err
 	}
 
-	return *pod ,*events,nil
+	return *pod, *events, nil
 }
 
-
-
-func (i *node) Describe() (coreV1.Node, coreV1.EventList , error)  {
+func (i *node) Describe() (coreV1.Node, coreV1.EventList, error) {
 	//Node
 	getOpts := metav1.GetOptions{}
 	clientset, err := client.InitClient()
 	if err != nil {
-		return coreV1.Node{} ,coreV1.EventList{}, err
+		return coreV1.Node{}, coreV1.EventList{}, err
 	}
 
-	node , err := clientset.
+	node, err := clientset.
 		CoreV1().
 		Nodes().
 		Get(i.Name, getOpts)
 
 	if err != nil {
-		return  coreV1.Node{} ,coreV1.EventList{}, err
+		return coreV1.Node{}, coreV1.EventList{}, err
 	}
 
 	// Events
@@ -89,12 +86,12 @@ func (i *node) Describe() (coreV1.Node, coreV1.EventList , error)  {
 
 	restconfig, err := kubeconfig.ClientConfig()
 	if err != nil {
-		return  *node ,coreV1.EventList{}, err
+		return *node, coreV1.EventList{}, err
 	}
 
 	coreclient, err := corev1client.NewForConfig(restconfig)
 	if err != nil {
-		return *node ,coreV1.EventList{}, err
+		return *node, coreV1.EventList{}, err
 	}
 
 	req := coreclient.
@@ -108,8 +105,8 @@ func (i *node) Describe() (coreV1.Node, coreV1.EventList , error)  {
 	obj, _, err := scheme.Codecs.UniversalDeserializer().Decode([]byte(eventsYaml), nil, nil)
 	events := obj.(*coreV1.EventList)
 	if err != nil {
-		return *node ,coreV1.EventList{}, err
+		return *node, coreV1.EventList{}, err
 	}
 
-	return *node ,*events,nil
+	return *node, *events, nil
 }
