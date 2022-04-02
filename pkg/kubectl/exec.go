@@ -1,16 +1,16 @@
 package kubectl
 
 import (
+	"log"
+	"os"
+	"strings"
+	_ "unsafe"
+
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 	corev1client "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/remotecommand"
-	_ "k8s.io/kubernetes/pkg/kubectl/cmd/cp"
-	"log"
-	"os"
-	"strings"
-	_ "unsafe"
 )
 
 func (i *pod) Exec(cmd []string) error {

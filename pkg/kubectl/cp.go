@@ -15,8 +15,8 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/tools/remotecommand"
-	_ "k8s.io/kubernetes/pkg/kubectl/cmd/cp"
 	cmdutil "k8s.io/kubernetes/pkg/kubectl/cmd/util"
+
 )
 
 func (i *pod) copyToPod(srcPath string, destPath string) error {

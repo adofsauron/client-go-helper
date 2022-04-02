@@ -1,5 +1,7 @@
 module github.com/adofsauron/client-go-helper
 
+go 1.17
+
 replace (
 	golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c => github.com/golang/crypto v0.0.0-20190325154230-a5d413f7728c
 	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421 => github.com/golang/oauth2 v0.0.0-20190226205417-e64efc72b421
@@ -19,14 +21,11 @@ require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
 	github.com/MakeNowJust/heredoc v0.0.0-20171113091838-e9091a26100e // indirect
 	github.com/Sirupsen/logrus v1.0.6 // indirect
-	github.com/chai2010/gettext-go v0.0.0-20170215093142-bf70f2a70fb1 // indirect
 	github.com/docker/docker v1.13.1 // indirect
 	github.com/docker/spdystream v0.0.0-20181023171402-6480d4af844c // indirect
 	github.com/elazarl/goproxy v0.0.0-20190711103511-473e67f1d7d2 // indirect
-	github.com/elazarl/goproxy/ext v0.0.0-20190711103511-473e67f1d7d2 // indirect
 	github.com/evanphx/json-patch v4.1.0+incompatible // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
-	github.com/fatih/camelcase v1.0.0 // indirect
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-openapi/spec v0.18.0 // indirect
 	github.com/gogo/protobuf v1.2.1 // indirect
@@ -70,4 +69,15 @@ require (
 	k8s.io/utils v0.0.0-20190308190857-21c4ce38f2a7 // indirect
 	sigs.k8s.io/yaml v1.1.0 // indirect
 
+)
+
+require (
+	github.com/PuerkitoBio/purell v1.1.0 // indirect
+	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
+	github.com/go-openapi/jsonpointer v0.17.0 // indirect
+	github.com/go-openapi/jsonreference v0.17.0 // indirect
+	github.com/go-openapi/swag v0.17.0 // indirect
+	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329 // indirect
+	golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a // indirect
+	google.golang.org/appengine v1.4.0 // indirect
 )
